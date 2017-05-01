@@ -1,0 +1,67 @@
+<% flat = data.flats[owner] %>
+<div class ="img-extended" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= image_path flat.picture %>');">
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6 col-xs-12">
+      <div class="flat-situation">
+        <div class="flat-owner text-center">
+          <%= image_tag flat.owner_picture, class: "img-circle avatar-mlarge" %>
+          <p><%= flat.owner_name %></p>
+        </div>
+
+        <div class="flat-description">
+          <h4><%= flat.summary %></h4>
+          <p><%= flat.city %></p>
+          <% flat.rating.times do %>
+            <i class="fa fa-star" id="yellow-star"></i>
+          <% end %>
+          <% (5 - flat.rating).times do %>
+            <i class="fa fa-star" id="grey-star"></i>
+          <% end %>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-6 col-xs-12">
+      <div class="wrapper-grey booking-form">
+        <div class="row">
+          <div class="col-xs-12">
+            <h4>Book this flat</h4>
+          </div>
+
+          <div class="col-xs-6">
+            <form action="">
+            <input type="text" class="form-control form-element" placeholder="Checkin">
+          </div>
+
+          <div class="col-xs-6">
+            <input type="text" class="form-control form-element" placeholder="Checkout">
+          </div>
+
+          <div class="col-xs-12">
+            <select class="form-control form-element">
+              <option>1 guest</option>
+              <option>2 guests</option>
+              <option>3 guests</option>
+            </select>
+          </div>
+
+          <div class="col-xs-12">
+            <button type="submit" class="btn btn-primary btn-block form-element">Book it</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="wrapper-grey">
+  <div class="container">
+    <h4>About this flat</h4>
+  </div>
+</div>
+
+

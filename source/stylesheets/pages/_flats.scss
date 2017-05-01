@@ -1,0 +1,43 @@
+.img-extended {
+  background-size: cover;
+  height: 30vh;
+  background-position: center;
+}
+
+.flat-situation {
+  display: flex;
+  align-items: center;
+  margin: 20px;
+}
+
+.flat-owner {
+  padding: 10px;
+  p {
+    color: $gray-light;
+  }
+}
+
+.flat-description {
+  padding: 10px;
+  p {
+    color: $gray-light;
+  }
+}
+
+#grey-star {
+  color: $gray-light;
+}
+
+#yellow-star {
+  color: #FFB400;
+}
+
+.booking-form {
+  margin: 30px auto;
+  padding: 20px;
+  width: 75%;
+}
+
+.form-element {
+  margin: 5px auto;
+}

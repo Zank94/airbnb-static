@@ -70,45 +70,23 @@ title: Le Wagon Middleman boilerplate
     </div>
 
     <div class="row">
+      <% data.flats.each do |owner, flat| %>
       <div class="col-xs-12 col-sm-4">
-        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('images/card-paris.jpg');">
-          <div class="card-category">Paris</div>
+        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= image_path flat.picture %>');">
+          <div class="card-category"><%= flat.city %></div>
           <div class="card-description">
-            <h1>Anne's home</h1>
-            <p>Charming room with patio</p>
+            <h1><%= flat.name %></h1>
+            <p><%= flat.summary %></p>
           </div>
-          <%= image_tag "anne.jpg", class: "card-user avatar" %>
-          <%= link_to "Anne", "#", class: "card-link" %>
+          <%= image_tag flat.owner_picture, class: "card-user avatar" %>
+          <%= link_to "#", "flats/#{owner}.html", class: "card-link" %>
         </div>
       </div>
+      <% end %>
 
-      <div class="col-xs-12 col-sm-4">
-        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('images/card-brussels.jpeg');">
-          <div class="card-category">Brussels</div>
-          <div class="card-description">
-            <h1>Romain's home</h1>
-            <p>Lovely house</p>
-          </div>
-          <%= image_tag "romain.jpg", class: "card-user avatar" %>
-          <%= link_to "Romain", "#", class: "card-link" %>
-        </div>
-      </div>
-
-      <div class="col-xs-12 col-sm-4">
-        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('images/card-london.jpeg');">
-          <div class="card-category">London</div>
-          <div class="card-description">
-            <h1>Seb's home</h1>
-            <p>Nice flat in Piccadilly</p>
-          </div>
-          <%= image_tag "seb.jpg", class: "card-user avatar" %>
-          <%= link_to "Seb", "#", class: "card-link" %>
-        </div>
-      </div>
     </div>
   </div>
 </div>
-
 <!-- Your newsletter code -->
 <div class="text-center padded">
   <h2>Get news from us</h2>
